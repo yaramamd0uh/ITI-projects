@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Functions Playground</title>
+    <style>
+        body {
+            font-family: 'Lucida Console', monospace;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            background-color: #460337;
+            padding: 15px 0;
+            margin-bottom: 20px;
+        }
+
+        .function-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+            .function-card h2 {
+                margin-top: 0;
+                color: #460337;
+            }
+
+        input, select, button {
+            padding: 8px 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 200px;
+        }
+
+        button {
+            background-color: #460337;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: auto;
+        }
+
+            button:hover {
+                background-color: #ac0a87;
+            }
+
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Functions Playground</h1>
+
+    <!-- Function 1: Check Age -->
+    <div class="function-card">
+        <h2>Check Age</h2>
+        <input id="num" type="number" placeholder="enter age" />
+        <button onclick="check()">Submit</button>
+        <div id="result-age" class="result"></div>
+    </div>
+
+    <!-- Function 2: Count Vowels -->
+    <div class="function-card">
+        <h2>Count Vowels</h2>
+        <input id="str" type="text" placeholder="enter string" />
+        <button onclick="count_vowels()">Submit</button>
+        <div id="result-vowels" class="result"></div>
+    </div>
+
+    <!-- Function 3: Simple Calculator -->
+    <div class="function-card">
+        <h2>Calculator</h2>
+        <input id="num1" type="number" placeholder="num1" />
+        <input id="oper" type="text" placeholder="operation: sum, subtract, multiply, divide" />
+        <input id="num2" type="number" placeholder="num2" />
+        <button onclick="solver()">Submit</button>
+        <div id="result-solver" class="result"></div>
+    </div>
+
+    <!-- Function 4: Login Check -->
+    <div class="function-card">
+        <h2>Login Check</h2>
+        <input id="uname" type="text" placeholder="username" />
+        <input id="pass" type="password" placeholder="password" />
+        <button onclick="check_email()">Submit</button>
+        <div id="result-login" class="result"></div>
+    </div>
+
+    <!-- Function 5: Guess Number -->
+    <div class="function-card">
+        <h2>Guess Number</h2>
+        <input type="number" id="usernum" placeholder="enter num 0-9" />
+        <button onclick="generate()">Submit</button>
+        <div id="result-guess" class="result"></div>
+    </div>
+
+    <script>
+        // Function 1: Check Age
+        function check() {
+            const i = parseInt(document.getElementById('num').value);
+            let msg;
+            if (i > 0) {
+                if (i > 1 && i <= 10) {
+                    msg = "child";
+                } else if (i > 10 && i <= 18) {
+                    msg = "teenager";
+                } else if (i > 18 && i <= 50) {
+                    msg = "grown";
+                } else {
+                    msg = "old";
+                }
+            } else {
+                msg = "Please enter a positive number";
+            }
+            document.getElementById('result-age').innerText = msg;
+        }
+
+        // Function 2: Count vowels
+        function count_vowels() {
+            const str = document.getElementById('str').value;
+            let count = 0;
+            for (let i of str.toLowerCase()) {
+                if (i == 'a') count += 2;
+                else if (i == 'e' || i == 'o') count += 1;
+                else if (i == 'i') count += 3;
+            }
+            document.getElementById('result-vowels').innerText = "Vowel score: " + count;
+        }
+
+        // Function 3: Solver
+        function solver() {
+            const fnum = parseInt(document.getElementById('num1').value);
+            const snum = parseInt(document.getElementById('num2').value);
+            const str2 = document.getElementById('oper').value;
+            let result;
+            if (str2 == 'sum') result = fnum + snum;
+            else if (str2 == 'subtract') result = fnum - snum;
+            else if (str2 == 'multiply') result = fnum * snum;
+            else if (str2 == 'divide') result = fnum / snum;
+            else result = "Invalid operation";
+            document.getElementById('result-solver').innerText = "Result: " + result;
+        }
+
+        // Function 4: Check Email
+        function check_email() {
+            const email = document.getElementById('uname').value;
+            const pass = document.getElementById('pass').value;
+            let msg;
+            if (email == 'admin' && pass == '421$$') msg = 'Welcome admin';
+            else if (email != 'admin' && pass == '421$$') msg = 'Wrong email';
+            else if (email == 'admin' && pass != '421$$') msg = 'Wrong password';
+            else msg = 'Wrong email and password';
+            document.getElementById('result-login').innerText = msg;
+        }
+
+        // Function 5: Generate random number
+        function generate() {
+            const randnum = Math.floor(Math.random() * 10);
+            const usernum = parseInt(document.getElementById('usernum').value);
+            let msg = usernum == randnum ?
+                'Congratulations! You guessed the number ' + randnum :
+                'Sorry, wrong guess. The number was ' + randnum;
+            document.getElementById('result-guess').innerText = msg;
+        }
+    </script>
+
+</body>
+</html>

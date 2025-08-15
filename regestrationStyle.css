@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Lucida Calligraphy;
+}
+.main-table {
+    border-collapse: collapse;
+
+}
+    .main-table td {
+        vertical-align: top;
+    }
+h1 {
+    background-color: red;
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+}
+h2 {
+    padding: 0 0 20px 0;
+    text-align: left;
+}
+h3 {
+    padding:20px ;
+    text-align: left; 
+}
+.about-us {
+    vertical-align: top;
+    background-color: lightpink;
+    padding: 20px;
+}
+    .about-us p {
+        color: red;
+        padding: 0 0 20px 0;
+        text-align:left;
+    }
+    .about-us table {
+        
+        padding: 20px;
+        display: table;
+        border-collapse: collapse;
+    }
+.about-us tr{
+
+    display:table-row;
+   border:4px solid black;
+}
+.about-us td {
+
+    display: table-cell;
+    border: 4px solid black;
+}
+#fcolumn {
+    background-color: dimgrey;
+    width: 20%;
+   
+}
+.login {
+    border: dashed;
+    padding: 20px;
+}
+
+.site-menu a {
+    background-color: lightpink;
+    color: red;
+    justify-content: center;
+    display: flex;
+    text-decoration: none;
+}
+.site-menu ul {
+    list-style-type: none;
+    text-align: left;
+    padding: 20px;
+}
+
+input[type="text"]:hover,
+input[type="password"]:hover {
+    background-color: yellow;
+}

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>day 6</title>
+    <style>* {
+    margin: 0;
+    padding: 0;
+
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Lucida Calligraphy;
+}
+.main-table {
+    border-collapse: collapse;
+
+}
+    .main-table td {
+        vertical-align: top;
+    }
+h1 {
+    background-color: red;
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+}
+h2 {
+    padding: 0 0 20px 0;
+    text-align: left;
+}
+h3 {
+    padding:20px ;
+    text-align: left; 
+}
+.about-us {
+    vertical-align: top;
+    background-color: lightpink;
+    padding: 20px;
+}
+    .about-us p {
+        color: red;
+        padding: 0 0 20px 0;
+        text-align:left;
+    }
+    .about-us table {
+        
+        padding: 20px;
+        display: table;
+        border-collapse: collapse;
+    }
+.about-us tr{
+
+    display:table-row;
+   border:4px solid black;
+}
+.about-us td {
+
+    display: table-cell;
+    border: 4px solid black;
+}
+#fcolumn {
+    background-color: dimgrey;
+    width: 20%;
+   
+}
+.login {
+    border: dashed;
+    padding: 20px;
+}
+
+.site-menu a {
+    background-color: lightpink;
+    color: red;
+    justify-content: center;
+    display: flex;
+    text-decoration: none;
+}
+.site-menu ul {
+    list-style-type: none;
+    text-align: left;
+    padding: 20px;
+}
+
+input[type="text"]:hover,
+input[type="password"]:hover {
+    background-color: yellow;
+}</style>
+</head>
+<body>
+   
+    <table class="main-table">
+        <tr >
+            <td colspan="2">
+                <h1>this is the page header</h1>
+            </td>
+        </tr>
+        <tr>
+            <td id="fcolumn">
+                <div class="login">
+                    <label for="uname">user name</label>
+                    <input id="uname" name="username" type="text" />
+                    <br />
+                    <label for="pass">password</label>
+                    <input id="pass" name="pass" type="password" />
+                    <br />
+                    <input id="remember" name="remember me" type="checkbox" />
+                    <label for="remember">remember me</label>
+                    <br />
+                    <button type="submit">login</button>
+
+                </div>
+                <div class="site-menu">
+                    <h3>site menu</h3>
+                    <ul>
+
+                        <li><a href="#link1">link1</a></li>
+                        <li><a href="#link2">link2</a></li>
+                        <li><a href="#link3">link3</a></li>
+                        <li><a href="#link4">link4</a></li>
+                        <li><a href="#link5">link5</a></li>
+                    </ul>
+                </div>
+            </td>
+            <td>
+                <div class="about-us">
+                    <h2>about us</h2>
+                    
+                    <p>
+                        this is paragraph
+                        this is paragraph this is paragraph this is paragraph
+                        this is paragraph  this is paragraph  this is paragraph
+                        this is paragraph this is paragraph this is paragraph
+                        this is paragraph this is paragraph this is paragraph
+                        this is paragraph this is paragraph this is paragraph
+                    </p>
+                    <table>
+                        <tr>
+                            <td>title1</td>
+                            <td>title2</td>
+                            <td>title3</td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+    <style>
+        body {
+            background-color: mediumseagreen;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:100vh;
+            margin:0;
+        }
+        div{
+         padding:40px;
+         background-color:white;
+         text-align:center;
+        }
+        #username ,#pass,#bttn{
+            border:none;
+            background-color:gainsboro;
+            padding:15px;
+            margin:4px;
+        }
+        #bttn{
+            background-color:green;
+            color:white;
+
+        }
+    </style>
+    
+</head>
+<body>
+    <div>
+        <input id="username" type="text" placeholder="enter your email" />
+        <br />
+        <input id="pass" type="password" placeholder="enter your password" />
+        <br />
+        <button id="bttn" type="submit" onclick="check()">login</button>
+    </div>
+    <script>
+        function check() {
+            let user = document.getElementById("username").value;
+            let pass = document.getElementById("pass").value;
+            if (user === "admin" && pass === "123") {
+
+                window.location.href = 'todolist.html'
+            }
+            else {
+                alert("Invalid username or password");
+            }
+        }
+
+        function addtask() {
+            let task = document.getElementById("task").value;
+            let newtask = document.createElement('li');
+
+            let confirm = document.createElement('button');
+            confirm.innerHTML = "Confirm";
+            confirm.id = 'confbttn'
+            confirm.onclick = function () {
+                newtask.style.backgroundColor = 'lightgreen';
+            }
+            let del = document.createElement('button');
+            del.innerHTML = 'delete'
+            del.id = 'delbttn';
+            del.onclick = function () {
+                document.getElementById('taskdiv').removeChild(newtask);
+            }
+
+            newtask.innerHTML = task;
+            let bttndiv = document.createElement('bttndiv');
+            bttndiv.appendChild(confirm);
+            bttndiv.appendChild(del);
+            newtask.appendChild(bttndiv);
+            document.getElementById('taskdiv').appendChild(newtask);
+        }
+
+
+    </script>
+</body>
+</html>
